@@ -17,6 +17,7 @@ def is_prime(number):
             return False
     return True
 
-if __name__ == "__name__":
+if __name__ == "__main__":
+
     print(fibonacci(10))
-    print(is_prime(2))
+    print(is_prime(7))
