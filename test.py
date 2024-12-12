@@ -10,7 +10,9 @@ def fibonacci(n):
 
 
 def is_prime(number):
-    if number <= 1:
+    if number == 0:
+        raise ValueError("nuh uh")
+    elif number <= 1:
         return False
     for i in range(2, int(number**0.5) + 1):
         if number % i == 0:
