@@ -11,13 +11,13 @@ def fibonacci(n):
 
 def is_prime(number):
     if number <= 1:
-        raise ValueError("Nuh uh")
+        return False
     for i in range(2, int(number**0.5) + 1):
         if number % i == 0:
             return False
     return True
 
 if __name__ == "__main__":
-
     print(fibonacci(10))
-    print(is_prime(7))
+    print(is_prime(1)) 
+
