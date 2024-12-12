@@ -22,4 +22,5 @@ def is_prime(number):
 if __name__ == "__main__":
     print(fibonacci(10))
     print(is_prime(1)) 
+    print(is_prime(0))
 
