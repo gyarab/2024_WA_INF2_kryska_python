@@ -50,4 +50,5 @@ if __name__ == "__main__":
     print(is_prime(0)) 
     print(is_prime(-1)) 
     print(primes_in(10))  
-    print(primes_in_range(10, 20))  
+    print(primes_in_range(2, 5))  
+    print(primes_in_range(8, 10))
