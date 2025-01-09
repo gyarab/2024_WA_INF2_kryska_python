@@ -10,7 +10,7 @@ def fibonacci(n):
 
 def is_prime(number):
     if number == 0 or number == -1:
-        raise ValueError("Nuh uh")
+        raise ValueError("this aint it")
     elif number <= 1:
         return False
     for i in range(2, int(number**0.5) + 1):
@@ -51,17 +51,61 @@ def primes_in_range(a, b):
 def split_into_threes(text):
 
     if not isinstance(text, str):
-        raise ValueError("Argument musí být řetězec")
+        raise ValueError("no string here buddy")
     
-
     result = []
     
-
     for i in range(0, len(text), 3):
         result.append(text[i:i+3]) 
     
     return result
 
+
+
+
+
+
+
+def caesar_encode(text):
+    if not all(c.isalpha() or c == ' ' or c == '.' for c in text):
+        raise ValueError("Text obsahuje nepovolené znaky")
+    
+    result = []
+    
+    for char in text:
+        if char.islower():
+            new_char = chr((ord(char) - ord('a') + 3) % 26 + ord('a'))
+            result.append(new_char)
+        elif char.isupper(): 
+            new_char = chr((ord(char) - ord('A') + 3) % 26 + ord('A'))
+            result.append(new_char)
+        elif char == ' ': 
+            result.append(' ')
+        elif char == '.':  
+            result.append('.')
+    
+    return ''.join(result)
+
+
+def caesar_decode(code):
+    if not all(c.isalpha() or c == ' ' or c == '.' for c in code):
+        raise ValueError("Text obsahuje nepovolené znaky")
+    
+    result = []
+    
+    for char in code:
+        if char.islower(): 
+            new_char = chr((ord(char) - ord('a') - 3) % 26 + ord('a'))
+            result.append(new_char)
+        elif char.isupper(): 
+            new_char = chr((ord(char) - ord('A') - 3) % 26 + ord('A'))
+            result.append(new_char)
+        elif char == ' ': 
+            result.append(' ')
+        elif char == '.':  
+            result.append('.')
+    
+    return ''.join(result)
 
 if __name__ == "__main__":
     print(fibonacci(10))
@@ -71,8 +115,21 @@ if __name__ == "__main__":
     print(primes_in_range(2, 5))
     try:
         print(split_into_threes("abcdefg"))  
-        print(split_into_threes("abcd"))  
-        print(split_into_threes("a"))       
-        print(split_into_threes(123))       
+        print(split_into_threes("abcd")) 
+        print(split_into_threes("a"))    
+        print(split_into_threes(123))    
     except ValueError as e:
-        print(e)  
+        print(e) 
+
+    try:
+        text = "Hello World."
+        encoded_text = caesar_encode(text)
+        decoded_text = caesar_decode(encoded_text)
+        
+        print(f"Original: {text}")
+        print(f"Encoded: {encoded_text}")
+        print(f"Decoded: {decoded_text}")
+        
+        print(caesar_encode("Hello@World"))
+    except ValueError as e:
+        print(e)
