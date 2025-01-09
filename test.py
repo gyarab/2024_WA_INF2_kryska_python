@@ -20,17 +20,34 @@ def is_prime(number):
     return True
 
 
+def primes_in(n):
+    if n < 2:
+        return [] 
+    primes = []
+    for i in range(2, n + 1):
+        if is_prime(i):
+            primes.append(i)
+    return primes
+
+
 def primes_in_range(a, b):
 
     if not isinstance(a, int) or not isinstance(b, int):
         raise ValueError("Both a and b must be integers")
     if a > b:
         raise ValueError("a must be less than or equal to b")
-  
+    
     primes = []
-    for i in range(a + 1, b): 
+    
+
+    if is_prime(a):
+        primes.append(a)
+    
+
+    for i in range(a + 1, b + 1):
         if is_prime(i):
             primes.append(i)
+    
     return primes
 
 
@@ -39,5 +56,5 @@ if __name__ == "__main__":
     print(is_prime(1)) 
     print(is_prime(0)) 
     print(is_prime(-1))  
+    print(primes_in(10)) 
     print(primes_in_range(2, 5))  
-    print(primes_in_range(8, 10))
