@@ -8,7 +8,6 @@ def fibonacci(n):
     else:
         return fibonacci(n - 1) + fibonacci(n - 2)
 
-
 def is_prime(number):
     if number == 0 or number == -1:
         raise ValueError("Nuh uh")
@@ -19,7 +18,6 @@ def is_prime(number):
             return False
     return True
 
-
 def primes_in(n):
     if n < 2:
         return []  
@@ -29,38 +27,52 @@ def primes_in(n):
             primes.append(i)
     return primes
 
-
 def primes_in_range(a, b):
 
     if not isinstance(a, int) or not isinstance(b, int):
         raise ValueError("Both a and b must be integers")
-    
-
     if a > b:
         raise ValueError("a must be less than or equal to b")
     
     primes = []
     
-
     if is_prime(a):
         primes.append(a)
     
-
     for i in range(a + 1, b + 1):
         if is_prime(i):
             primes.append(i)
     
-
     if not primes:
         return ()
     
     return primes
 
+def split_into_threes(text):
+
+    if not isinstance(text, str):
+        raise ValueError("Argument musí být řetězec")
+    
+
+    result = []
+    
+
+    for i in range(0, len(text), 3):
+        result.append(text[i:i+3]) 
+    
+    return result
+
 
 if __name__ == "__main__":
     print(fibonacci(10))
-    print(is_prime(1)) 
+    print(is_prime(3)) 
     print(primes_in(10))  
     print(primes_in_range(8, 10))  
     print(primes_in_range(2, 5))
-
+    try:
+        print(split_into_threes("abcdefg"))  
+        print(split_into_threes("abcd"))  
+        print(split_into_threes("a"))       
+        print(split_into_threes(123))       
+    except ValueError as e:
+        print(e)  
