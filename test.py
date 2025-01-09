@@ -10,8 +10,8 @@ def fibonacci(n):
 
 
 def is_prime(number):
-    if number == 0:
-        raise ValueError("nuh uh")
+    if number == 0 or number == -1:
+        raise ValueError("Nuh uh")
     elif number <= 1:
         return False
     for i in range(2, int(number**0.5) + 1):
@@ -19,8 +19,21 @@ def is_prime(number):
             return False
     return True
 
+
+def primes_in(n):
+    if n < 2:
+        return []
+    primes = []
+    for i in range(2, n + 1):
+        if is_prime(i):
+            primes.append(i)
+    return primes
+
+
 if __name__ == "__main__":
     print(fibonacci(10))
     print(is_prime(1)) 
-    print(is_prime(0))
+    print(is_prime(0)) 
+    print(is_prime(-1)) 
+    print(primes_in(10))  
 
