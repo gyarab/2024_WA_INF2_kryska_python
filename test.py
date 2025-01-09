@@ -22,7 +22,7 @@ def is_prime(number):
 
 def primes_in(n):
     if n < 2:
-        return [] 
+        return []  
     primes = []
     for i in range(2, n + 1):
         if is_prime(i):
@@ -34,6 +34,8 @@ def primes_in_range(a, b):
 
     if not isinstance(a, int) or not isinstance(b, int):
         raise ValueError("Both a and b must be integers")
+    
+
     if a > b:
         raise ValueError("a must be less than or equal to b")
     
@@ -48,13 +50,17 @@ def primes_in_range(a, b):
         if is_prime(i):
             primes.append(i)
     
+
+    if not primes:
+        return ()
+    
     return primes
 
 
 if __name__ == "__main__":
     print(fibonacci(10))
     print(is_prime(1)) 
-    print(is_prime(0)) 
-    print(is_prime(-1))  
-    print(primes_in(10)) 
-    print(primes_in_range(2, 5))  
+    print(primes_in(10))  
+    print(primes_in_range(8, 10))  
+    print(primes_in_range(2, 5))
+
