@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{%block header %}
+    {{ article.title }}
+{%endblock%}
+
+{% block main %}
+    <img src="{{ article.image }}" alt="{{ article.title }}">
+    <p>{{ article.perex }}</p>
+    <p>{{ article.author }}</p>
+{% endblock %}

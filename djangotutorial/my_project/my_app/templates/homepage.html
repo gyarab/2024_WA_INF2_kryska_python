@@ -1,0 +1,14 @@
+ {% extends "base.html" %}
+
+
+{% block header %}
+    zpravy odevsad
+{% endblock %}
+{% block main %}
+    <h1>Zpravy odevsad</h1>
+    {% for article in articles %}
+        <a href="/article/{{forloop.counter0}}"><h2>{{article.title}}</h2></a>
+        <p>{{ article.perex }}</p>
+
+    {% endfor %}
+{% endblock %}
