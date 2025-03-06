@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VALORANT</title>
+    <style>
+        body {
+            font-family: arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0c0916;
+            color: #ffffff;
+        }   
+        header {
+            background-color: #af4c4c;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        main {
+            padding: 7em;
+        }
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+        }
+        .image-grid a {
+            flex: 1 1 calc(33.333% - 1em);
+            box-sizing: border-box;
+            text-decoration: none;
+            color: inherit;
+        }
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+            max-width: 400px;
+        }
+        .image-grid img:hover {
+            transform: scale(1.05);
+        }
+        .image-grid h2 {
+            margin-top: 0.5em;
+            font-size: 1.5em; 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>{% block header %}VALORANT{% endblock %}</h1>
+    </header>
+    <main>
+        {% block main %}
+        {% endblock %}
+    </main>
+</body>
+</html>
