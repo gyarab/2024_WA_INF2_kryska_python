@@ -9,19 +9,107 @@
             font-family: arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #0c0916;
+            background-color: #131524;
             color: #ffffff;
         }   
         header {
-            background-color: #af4c4c;
-            color: white;
-            padding: 1em 0;
-            text-align: center;
+            background-color: #ce3c3c;
+            color: black;
+            padding: 0.5em 2em;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
         }
-        header h1 {
+        
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+        }
+        
+        .logo {
+            height: 50px;
+            width: auto;
+        }
+        
+        .header-title h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 2em;
+            font-weight: bold;
+            text-transform: uppercase;
         }
+        
+        .header-title p {
+            margin: 0;
+            font-size: 0.8em;
+            font-style: italic;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5em;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5em 0;
+            position: relative;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #fff;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #fff;
+            transition: width 0.3s;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        .search-bar {
+            display: flex;
+            align-items: center;
+        }
+        
+        .search-bar input {
+            padding: 0.5em;
+            border: none;
+            border-radius: 4px 0 0 4px;
+        }
+        
+        .search-bar button {
+            padding: 0.5em 1em;
+            background-color: #0c0916;
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+        
+        .search-bar button:hover {
+            background-color: #1a152b;
+        }
+
 
         main {
             padding: 7em;
@@ -29,13 +117,16 @@
         .image-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 1em;
+            gap: 5em;
         }
-        .image-grid a {
+        .image-grid .grid-item {
             flex: 1 1 calc(33.333% - 1em);
             box-sizing: border-box;
+        }
+        .image-grid a {
             text-decoration: none;
             color: inherit;
+            display: block;
         }
         .image-grid img {
             width: 100%;
@@ -50,16 +141,102 @@
         .image-grid h2 {
             margin-top: 0.5em;
             font-size: 1.5em; 
+            padding: 0.6em;
+            border: rgb(20, 20, 20) 2px solid;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
         }
+
+        footer {
+            background-color: #ce3c3c;
+            color: black;
+            padding: 1.5em 0;
+            text-align: center;
+            margin-top: auto;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            padding: 0 1em;
+        }
+        .footer-section h3 {
+            border-bottom: 2px solid black;
+            padding-bottom: 0.5em;
+        }
+        .footer-section p, .footer-section a {
+            color: black;
+            text-decoration: none;
+        }
+        .footer-section a:hover {
+            text-decoration: underline;
+        }
+        .copyright {
+            width: 100%;
+            text-align: center;
+            margin-top: 1em;
+            padding-top: 1em;
+            border-top: 1px solid rgba(0,0,0,0.2);
+        }
+        
     </style>
 </head>
 <body>
     <header>
-        <h1>{% block header %}VALORANT{% endblock %}</h1>
+        <div class="header-left">
+            <img src="https://logos-world.net/wp-content/uploads/2023/05/Valorant-Logo.png" alt="VALORANT Logo" class="logo">
+            <div class="header-title">
+            </div>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="#">Agents</a></li>
+                <li><a href="#">Maps</a></li>
+                <li><a href="#">Weapons</a></li>
+                <li><a href="#">Game Modes</a></li>
+                <li><a href="#">News</a></li>
+            </ul>
+        </nav>
+        
+        <div class="search-bar">
+            <input type="text" placeholder="Search agents, maps...">
+            <button>Search</button>
+        </div>
     </header>
     <main>
-        {% block main %}
+        {% block main %}    
         {% endblock %}
     </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About VALORANT</h3>
+                <p>A 5v5 character-based tactical shooter</p>
+                <p>Precision gameplay meets unique agent abilities</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="#">Agents</a></p>
+                <p><a href="#">Maps</a></p>
+                <p><a href="#">Weapons</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <p><a href="#">Twitter</a></p>
+                <p><a href="#">YouTube</a></p>
+                <p><a href="#">Discord</a></p>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 VALORANT. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
