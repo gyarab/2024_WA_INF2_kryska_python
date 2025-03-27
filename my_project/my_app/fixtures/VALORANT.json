@@ -341,13 +341,13 @@
         "model": "my_app.text",
         "pk": 27,
         "fields": {
-            "title": "",
-            "content": "A veteran intelligence consultant from Colombia, Tejo's ballistic guidance system pressures the enemy to relinquish their ground - or their lives. His targeted strikes keep opponents off balance and under his heel.",
-            "date": "2023-10-26",
-            "image": "",
-            "country": "Country of origin: Colombia",
-            "background": "https://static.wikia.nocookie.net/valorant/images/c/cc/Tejo_Artwork_Full.png/revision/latest/scale-to-width-down/1000?cb=20250107192526",
-            "role": "Role: Initiator"
+            "title": "Waylay",
+            "content": "Thailand's prismatic radiant Waylay transforms into light itself as she darts across the battlefield, striking down her targets through shards of light before flitting back to safety, all in the blink of an eye.",
+            "date": "2023-10-27",
+            "image": "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news/11c2b158d932076d3215749a34b7b4209b48ce44-587x900.png?auto=format&fit=fill&q=80&w=352",
+            "country": "Country of origin: Thailand",
+            "background": "https://static.wikia.nocookie.net/valorant/images/4/4f/Waylay_Artwork_Full.png/revision/latest/scale-to-width-down/1000?cb=20250304181227",
+            "role": "Role: Duelist"
         }
     }
 
