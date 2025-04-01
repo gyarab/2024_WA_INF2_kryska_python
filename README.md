@@ -5,6 +5,8 @@ Tento projekt je webová aplikace, která poskytuje podrobné informace o agente
 
 ## Funkce
 - **Profily agentů**: Podrobné profily pro agenty ve hře VALORANT, včetně informací o pozadí, schopnostech a zemi původu.
+- **Profily map**
+- **Profily zbraňí**
 - **Responzivní design**: Web je navržen tak, aby byl responzivní
 - **Interaktivní prvky**: Obsahuje interaktivní prvky, jako jsou tlačítka pro navigaci zpět na domovskou stránku.
 
