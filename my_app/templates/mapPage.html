@@ -1,0 +1,14 @@
+{% extends "homepageBase.html" %}
+
+
+{% block header %}
+{% endblock %}
+{% block main %}    
+<div class="image-grid">
+    {% for map in mapPage %}
+        <a href="/map/{{forloop.counter0}}">
+            <img src="{{ map.image }}" alt="{{ map.title }}">
+            <h2>{{map.title}}</h2></a>
+    {% endfor %}
+</div>
+{% endblock %}
