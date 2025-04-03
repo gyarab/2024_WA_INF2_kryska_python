@@ -1,0 +1,18 @@
+{% extends "textBase.html" %}
+
+{%block header %}
+    {{ map.title }}
+{%endblock%}
+
+{% block main %}
+<div class="content-container">
+    <img src="{{ map.background }}" alt="{{ map.title }}">
+    <div class="text-content">
+    <p>{{ map.content }}</p>
+    <p>{{ map.location }}</p>
+    <p>{{ map.map_type}}</p>
+    <p><a href="/weaponPage/" style="color: white;" >Weapons</a></p>
+    <p><a href="/" style="color: white;" >Agents</a></p>
+    </div>
+</div>
+{% endblock %}

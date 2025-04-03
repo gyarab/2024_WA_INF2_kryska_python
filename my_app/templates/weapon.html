@@ -1,0 +1,23 @@
+{% extends "textBase.html" %}
+
+{%block header %}
+    {{ weapon.name }}
+{%endblock%}
+
+{% block main %}
+<div class="content-container">
+    <img src="{{ weapon.image }}" alt="{{ weapon.name }}">
+    <div class="text-content">
+    <p>{{ weapon.description }}</p>
+    <p>Category: {{ weapon.category}}</p>
+    <p>Cost: {{ weapon.cost}} Credits</p>
+    <p>Fire rate: {{ weapon.fire_rate}}</p>
+    <p>Magazine size: {{ weapon.magazine_size}}</p>
+    <p>Alternative fire: {{ weapon.alt_fire}}</p>
+    <p><a href="/mapPage/" style="color: white;" >Maps</a></p>
+    <p><a href="/" style="color: white;" >Agents</a></p>
+    
+    
+    </div>
+</div>
+{% endblock %}
